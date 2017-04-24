@@ -84,6 +84,7 @@
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "highcharts-more": "^0.1.2",
+    "moment": "^2.18.1",
     "prop-types": "^15.5.8",
     "push.js": "0.0.12",
     "react": "^15.5.4",

@@ -83,6 +83,7 @@ class _LoginComponent extends Component {
                   </div>
                 </form>
               </div>
+              {button}
               <div className='panel-footer'> 
                 <Link to='/signup'> Don't have an account yet? Get started now.</Link>
               </div>
