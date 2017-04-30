@@ -15,7 +15,7 @@ class _SignupComponent extends Component {
     }
     this.onEmailChange = this.onEmailChange.bind(this)
     this.onPasswordChange = this.onPasswordChange.bind(this)
-    this.onPasswordConfrimChange = this.onPasswordConfrimChange.bind(this)
+    this.onPasswordConfirmChange = this.onPasswordConfirmChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
 
@@ -29,7 +29,7 @@ class _SignupComponent extends Component {
       password: e.target.value
     })
   }
-  onPasswordConfrimChange(e) {
+  onPasswordConfirmChange(e) {
     this.setState({
       passwordConfirm: e.target.value
     })
@@ -97,11 +97,11 @@ class _SignupComponent extends Component {
                   <div className='form-group'> 
                     <div className='input-group'> 
                       <span className='input-group-addon'><i className='fa fa-envelope fa-fw'/></span>
-                      <input className='form-control' type='email' onChange={this.handleEmailChange} value={this.state.email} placeholder={'your email @gmail.com'}/>
+                      <input className='form-control' type='email' onChange={this.onEmailChange} value={this.state.email} placeholder={'your email @gmail.com'}/>
                     </div>
                     <div className='input-group'> 
                       <span className='input-group-addon'><i className='fa fa-lock fa-fw'/></span>
-                      <input className='form-control' type='email' onChange={this.handlePasswordChange} value={this.state.password} placeholder={'****'}/>
+                      <input className='form-control' type='password' onChange={this.onPasswordChange} value={this.state.password} placeholder={'****'}/>
                     </div>
                   </div>
                   { button }

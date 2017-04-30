@@ -45,7 +45,7 @@ class _LoginComponent extends Component {
   }
 
   render() {
-    let button = <button type='submit' className='btn btn-success'>Login</button>
+    let button = <button type='submit' onClick={this.onSubmit} className='btn btn-success'>Login</button>
     if(this.state.loading) {
       button = <button type='submit' disabled className='btn btn-success'><i className='fa fa-fw fa-spin fa-spinner'></i></button>
     }
@@ -78,7 +78,7 @@ class _LoginComponent extends Component {
                     </div>
                    <div className='input-group'> 
                       <span className='input-group-addon'> <i className='fa fa-lock fa-fw'></i></span>
-                      <input className='form-control' type='email' placeholder='****' value={this.state.password} onChange={this.onPasswordChange}/>
+                      <input className='form-control' type='password' placeholder='****' value={this.state.password} onChange={this.onPasswordChange}/>
                     </div>
                   </div>
                 </form>

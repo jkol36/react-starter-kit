@@ -2,9 +2,26 @@ import {
   LOGIN_ENDPOINT, 
   SIGNUP_ENDPOINT
 } from '../config'
+import { LOGIN_ERROR, LOGIN_SUCCESS } from 'constants'
 import agent from 'superagent-bluebird-promise'
+import { push } from 'react-router-redux'
 
-export const loginRequest = user => {
+const loginError = error => dispatch => {
+  dispatch({
+    type: LOGIN_ERROR,
+    error
+  })
+}
+
+const loginSuccess = user => dispatch => {
+  dispatch({
+    type: LOGIN_SUCCESS,
+    user
+  })
+  return dispatch(push('/app'))
+}
+export const loginRequest = user => dispatch => {
+  console.log('login request', user)
   if(!user) {
     dispatch(loginError('no user submitted'))
   }
@@ -17,7 +34,7 @@ export const loginRequest = user => {
           .catch(err => dispatch(loginError(err)))
 }
 
-export const signupRequest = user => {
+export const signupRequest = user => dispatch => {
   if(!user) {
     dispatch(loginError('no user submitted'))
   }
