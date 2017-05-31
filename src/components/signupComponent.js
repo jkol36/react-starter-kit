@@ -35,7 +35,10 @@ class _SignupComponent extends Component {
     })
   }
 
-  onSubmit() {
+  onSubmit(e) {
+    const { dispatch } = this.props
+    e.preventDefault()
+    console.log('submitting sighnup')
     if(this.state.password !== this.state.passwordConfirm) {
       this.setState({
         error: "You password does not match"
@@ -68,7 +71,7 @@ class _SignupComponent extends Component {
     }))
   }
   render() {
-    let button = <button type='submit' className='btn btn-success'> Sign Up</button>
+    let button = <button type='submit' onClick={this.onSubmit} className='btn btn-success'> Sign Up</button>
     if(this.state.loading) {
       button = <button type='submit' disabled className='btn btn-success'><i className='fa fa-fw fa-spin fa-spinner'></i></button>
     }
@@ -102,6 +105,10 @@ class _SignupComponent extends Component {
                     <div className='input-group'> 
                       <span className='input-group-addon'><i className='fa fa-lock fa-fw'/></span>
                       <input className='form-control' type='password' onChange={this.onPasswordChange} value={this.state.password} placeholder={'****'}/>
+                    </div>
+                    <div className='input-group'> 
+                      <span className='input-group-addon'><i className='fa fa-lock fa-fw'/></span>
+                      <input className='form-control' type='password' onChange={this.onPasswordConfirmChange} value={this.state.passwordConfirm} placeholder={'****'}/>
                     </div>
                   </div>
                   { button }

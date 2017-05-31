@@ -14,7 +14,7 @@ const store = configureStore();
 const routes = createRoutes()
 const history = syncHistoryWithStore(browserHistory, store)
 
-console.log('dev.js called')
+
 render(
   <div>
     <DevTools store={store}/>
