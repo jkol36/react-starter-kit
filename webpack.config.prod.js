@@ -40,6 +40,18 @@ module.exports = {
       test: /\.less$/,
       loader: "style!css!less?strictMath&noIeCompat",
       include: path.join(__dirname, 'src')
+    }, {
+      test:/\.css$/,
+      loader:'css-loader',
+      options: {
+        modules: true,
+        camelCase:true,
+        localIdentName: '[path][name]__[local]--[hash:base64:5]',
+        getLocalIdent: (context, localIdentName, localName, options) => {
+          return 'whatever_random_class_name'
+        }
+      },
+      use: ['css-loader', 'style-loader']
     }]
   }
 };

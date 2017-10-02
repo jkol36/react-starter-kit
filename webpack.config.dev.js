@@ -36,6 +36,13 @@ module.exports = {
       test: /\.less$/,
       loader: "style!css!less?strictMath&noIeCompat",
       include: path.join(__dirname, 'src')
+    }, {
+      test:/\.css$/,
+      loader:'css-loader',
+      options: {
+        modules: true
+      },
+      use: ['css-loader', 'style-loader']
     }]
   }
 };
