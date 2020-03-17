@@ -6,7 +6,8 @@ import {
   LOGIN_ERROR, 
   LOGIN_SUCCESS, 
   SIGNUP_ERROR,
-  SIGNUP_SUCCESS
+  SIGNUP_SUCCESS,
+  USER_LOGOUT
 } from 'constants'
 import agent from 'superagent-bluebird-promise'
 import { push } from 'react-router-redux'
@@ -64,4 +65,12 @@ export const signupRequest = user => dispatch => {
             dispatch(signupSuccess(res.body))
           })
           .catch(err => dispatch(signupError(err)))
+}
+
+export const logUserOut = user => dispatch => {
+  dispatch({
+    type: USER_LOGOUT,
+    user
+  })
+  return dispatch(push('/login'))
 }

@@ -1,4 +1,4 @@
-import {LOGIN_SUCCESS, LOGIN_ERROR, SIGNUP_ERROR} from '../constants'
+import {LOGIN_SUCCESS, LOGIN_ERROR, SIGNUP_ERROR, USER_LOGOUT} from '../constants'
 
 const initialState = {
   user:null,
@@ -12,6 +12,8 @@ const auth = (state=initialState, action) => {
     case LOGIN_ERROR:
     case SIGNUP_ERROR:
       return action.error
+    case USER_LOGOUT:
+      return null
     default:
       return state
   }

@@ -6,7 +6,7 @@ export const TopBar = props => {
     <div className='row header'> 
       <div className='content'> 
         <div className='col-xs-12 value hidden-xs'> 
-          top bar
+          <button onClick={props.logout}> Logout </button>
         </div>
       </div>
     </div>
