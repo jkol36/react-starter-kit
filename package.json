@@ -52,7 +52,7 @@
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-react": "^6.2.0",
     "eventsource-polyfill": "^0.9.6",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase": "^3.6.1",
     "immutable": "^3.8.1",
     "less": "^2.7.1",
